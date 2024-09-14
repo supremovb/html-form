@@ -7,29 +7,28 @@
 
     <style>
         * {
-          padding: 0;
-          margin: 0;  
+            padding: 0;
+            margin: 0;
         }
 
         body {
             background-color: #f8f7ff;
             height: 100%;
             padding-block: 5%;
-            
         }
 
         main {
             margin: auto;
             height: 30rem;
-            width: 60%; 
+            width: 60%;
             background-color: #b8b8ff;
             border-radius: 1rem;
             padding-block: 2rem;
         }
 
         h1 {
-            text-align: center; 
-            color: #4a34c8; 
+            text-align: center;
+            color: #4a34c8;
             padding-block: 2rem;
             font-size: 2.5rem;
         }
@@ -37,8 +36,8 @@
         .form-title {
             margin: auto;
         }
-        
-        input[type="radio"]{
+
+        input[type="radio"] {
             color: white;
         }
 
@@ -50,7 +49,6 @@
             gap: 10px;
             padding-inline: 1.3rem;
             margin-bottom: 2rem;
-            
         }
 
         .grid-input {
@@ -62,36 +60,110 @@
             border-color: beige;
             background-color: transparent;
             border-color: transparent transparent black transparent;
-            
-
         }
 
         .grid-label {
             text-align: right;
-            
         }
 
         .grid-select {
             font-size: 12px;
             padding-block: 6px 4px;
-            line-height: 4px;    
+            line-height: 4px;
         }
 
         .checkbox-form {
             padding-inline: 4rem;
             margin-bottom: 2.5rem;
         }
-        
+
         .form-button {
             background-color: #f8f7ff;
             color: #9381ff;
-            border: 0px;
+            border: 0;
             border-radius: 4px;
-            padding: 1rem 2.4rem
+            padding: 1rem 2.4rem;
+        }
+
+        select {
+            font-size: 12px;
+            padding: 6px 4px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: transparent;
         }
     </style>
 </head>
 <body>
-    
+
+    <main>
+        <h1>Registration</h1>
+        <form action="action.php">
+            <!-- Username Field -->
+            <div class="flex-field">
+                <label for="username" class="grid-label">Username</label>
+                <input type="text" name="username" id="username" placeholder="Add your name" minlength="5" maxlength="10" class="grid-input" required>
+            </div>
+            <!-- Email Field -->
+            <div class="flex-field">
+                <label for="email" class="grid-label">Email</label>
+                <input type="email" name="email" id="email" placeholder="Add your email" class="grid-input" required>
+            </div>
+            <!-- Password Field -->
+            <div class="flex-field">
+                <label for="password" class="grid-label">Password</label>
+                <input type="password" name="password" id="password" placeholder="Add your password" minlength="5" maxlength="10" class="grid-input" required>
+            </div>
+            <!-- Phone Number Field -->
+            <div class="flex-field">
+                <label for="phone" class="grid-label">Phone Number</label>
+                <input type="number" name="phone" id="phone" placeholder="Add your number" class="grid-input" required>
+            </div>
+            <!-- Date Field -->
+            <div class="flex-field">
+                <label for="date" class="grid-label">Date</label>
+                <input type="date" name="date" id="date" class="grid-input" required>
+            </div>
+            <!-- DateTime Local Field -->
+            <div class="flex-field">
+                <label for="datetime" class="grid-label">Date/Time</label>
+                <input type="datetime-local" name="datetime" id="datetime" class="grid-input" required>
+            </div>
+            <!-- Select Field -->
+            <div class="flex-field">
+                <label for="country" class="grid-label">Country:</label>
+                <select name="country" id="country" class="grid-select" required>
+                    <option value="" disabled selected>Select your country</option>
+                    <option value="usa">United States</option>
+                    <option value="canada">Canada</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="australia">Australia</option>
+                    <option value="philippines">Philippines</option>
+                </select>
+            </div>
+            <!-- Radio Button Fields -->
+            <div class="checkbox-form">
+                <input type="radio" name="skills" id="programming" value="programming"><label for="programming">Programming</label>
+                <input type="radio" name="skills" id="java" value="java"><label for="java">Java</label>
+                <input type="radio" name="skills" id="web" value="web"><label for="web">Web</label>
+            </div>
+            <!-- File Upload Field -->
+            <div class="flex-field">
+                <label for="file" class="grid-label">Upload File</label>
+                <input type="file" name="file" id="file" accept=".jpg, .png">
+            </div>
+            <!-- Hidden Field -->
+            <input type="hidden" name="secret-key" value="tite">
+            <!-- Textarea -->
+            <div class="flex-field">
+                <label for="address" class="grid-label">Address</label>
+                <textarea name="address" id="address" rows="5" placeholder="Address" class="grid-input"></textarea>
+            </div>
+            <!-- Submit Button -->
+            <input type="submit" value="Click Submit" class="form-button">
+            <!-- Reset Button -->
+            <input type="reset" value="Reset" class="form-button">
+        </form>
+    </main>
 </body>
-</html> 
+</html>
